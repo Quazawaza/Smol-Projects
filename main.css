@@ -1,0 +1,107 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    background-color: black;
+    background-image: url(/Photos/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0vw -30vh;
+    backdrop-filter: blur(3px);
+    background-color: rgba(69, 69, 69, 0.15);
+    max-width: 100vw;
+    min-height: 100vh;
+    display:flex; 
+    flex-direction:column;
+}
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid black;
+    backdrop-filter: blur(20px);
+    background-color: rgba(69, 69, 69, 0.6);
+}
+.name {
+    font-weight: bold;
+    font-size: 32px;
+    color: whitesmoke;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+.container {
+    margin-top: 20vh;
+    background-color: lightgrey;
+    display: flex;
+    border-top: 1px solid black;
+    padding-bottom: 235px;
+}
+.photo {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color: gray;
+    border: 2px solid black;
+}
+.photo-container {
+    display: flex;
+}
+.description {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    padding: 10px;
+    font-size: 34px;
+    font-weight: bold;
+}
+.programm {
+    text-align: left;
+}
+.about {
+    padding: 10px;
+}
+.social-media {
+    display: flex;
+    align-items: flex-end;
+}
+main {
+    display: flex;
+}
+footer {
+    color: lightgray;
+    padding: 24px;
+    display: flex;
+    background-color: rgb(58, 58, 58);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 560px;
+    height: 315px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: gray;
+
+}
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .photo-container {
+        justify-content: space-around;
+    }
+    }
+@media (max-width: 370px) {
+    .name {
+        font-size: 24px;
+    }
+}
