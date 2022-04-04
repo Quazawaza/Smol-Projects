@@ -32,7 +32,6 @@ header {
     background-color: lightgrey;
     display: flex;
     border-top: 1px solid black;
-    padding-bottom: 235px;
 }
 .photo {
     width: 300px;
@@ -64,32 +63,26 @@ header {
 .about {
     padding: 10px;
 }
-.social-media {
-    display: flex;
-    align-items: flex-end;
-}
 main {
     display: flex;
 }
 footer {
     color: lightgray;
     padding: 24px;
-    display: flex;
     background-color: rgb(58, 58, 58);
     border: 1px solid black;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .video {
     margin-top: 10px;
+    padding: 10px;
+    background-color: gray;
     display: flex;
     justify-content: center;
     width: 560px;
     height: 315px;
     border: 2px solid black;
-    padding: 10px;
-    background-color: gray;
 
 }
 @media (max-width: 800px) {
@@ -99,9 +92,17 @@ footer {
     .photo-container {
         justify-content: space-around;
     }
+    .video { 
+        padding: 0px;
+        width: 320px;
+        height: 180px;
+    }
     }
 @media (max-width: 370px) {
     .name {
         font-size: 24px;
     }
+}
+.social {
+    padding-left: 5px;
 }
