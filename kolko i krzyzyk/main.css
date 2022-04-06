@@ -1,0 +1,40 @@
+body {
+    background-color: lightgray;
+    font-family: Roboto;
+}
+header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.board {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3 , calc(25vw + 4px));
+}
+.square {
+    width: 25vw;
+    height: 25vh;
+    background-color: gray;
+    border: 2px solid black;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 64px;
+}
+.message {
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.X {
+    color: red;
+}
+.O {
+    color: blue;
+}

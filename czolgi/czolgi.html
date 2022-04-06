@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Czołgi</title>
+  <link rel="stylesheet" href="czolgi.css">
+</head>
+<body>
+<header>Czołgi</header>
+<main>
+  <article>
+    <h3>Lista czołgów</h3>
+    <ul id="tanks"></ul>
+    <h3>Akcje</h3>
+    <h4>Dodanie czołgu</h4>
+    <form id="addTank">
+      <input type="text" name="name" placeholder="Nazwa czołgu" required maxlength="10">
+      <button type="submit">Dodaj</button>
+    </form>
+    <h4>Następna tura</h4>
+    <button type="button" id="nextTurn">Następna tura</button>
+  </article>
+  <aside>
+    <h3>Historia</h3>
+    <ul id="actions"></ul>
+  </aside>
+</main>
+<footer>Aplikacje Internetowe &copy; 2022</footer>
+<script src="czolgi.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+body {
+    font-size: 18px;
+    width: 95vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 40px 1fr 30px;
+    margin: 0 auto;
+}
+
+header {
+    font-size: 2rem;
+    border-bottom: 3px solid darkgray;
+    text-align: center;
+}
+
+main {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
