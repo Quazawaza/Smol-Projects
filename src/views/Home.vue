@@ -1,38 +1,48 @@
 <script>
 import { mapActions, mapState } from 'pinia';
 import { useCartStore } from '../stores/cart';
+import Pagination from '../components/Pagination.vue';
 
 export default {
+  components: { Pagination },
   data: () => ({
     isLoading: false,
     products: [],
     page: 1,
-    productsPerPage: 6,
     totalProducts: 0,
+    Productssperpage: 1,
   }),
   computed: {
     ...mapState(useCartStore, ['getItems', 'getTotalPrice']),
+    totalPages() {
+      console.log('liczba stron',  Math.ceil( this.totalProducts / this.Productssperpage), this.totalProducts, this.Productssperpage)
+      return Math.ceil( this.totalProducts / this.Productssperpage);
+    },
   },
   methods: {
     ...mapActions(useCartStore, ['addItem', 'deleteItem']),
-  },
-  mounted() {
-    this.isLoading = true;
-    fetch('https://sklep-api.cierzniak.it/products')
+    getproducts() {
+      fetch(`https://sklep-api.cierzniak.it/products?page=${this.page}`)
       .then((response) => response.json())
       .then((body) => {
         this.products = body.data;
-        this.page = body.metadata.page;
-        this.productsPerPage = body.metadata.itemsPerPage;
         this.totalProducts = body.metadata.totalRecords;
-        this.isLoading = false;
+        this.Productssperpage = body.metadata.itemsPerPage;
+        
       });
+    },
+  NextPage() {
+    this.getproducts();
+  }
+  },
+  mounted() {
+    this.getproducts(); 
   }
 };
 </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="row d-flex justify-content-center ">
       <div class="col-md-3 d-flex flex-column product_div "  v-for='product in products' :key='product.id'>
           <img class="photo" :src="product.photoUrl" >
@@ -44,7 +54,9 @@ export default {
           <span class="price"> {{ product.price.amount / 100 }} {{ product.price.currency }} </span>
           <button type='button' class="AddToCart" @click='addItem(product, "inc")'>Dodaj do koszyka</button>
       </div>
+      
     </div>
+    <Pagination v-model:current="page" :delta="6" :total="totalPages" :event="NextPage" />
   </div>
 </template>
 
@@ -99,4 +111,5 @@ export default {
   background-color: rgba(75, 0, 130, 1) ;
   box-shadow: 0 0 10px 5px rgba(75, 0, 130, 1);
 }
+
 </style>

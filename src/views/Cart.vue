@@ -38,6 +38,7 @@ export default {
       <div class="cartitem col-md-12 d-flex" v-for='item in getItems' :key='`cart-${item.product.id}`'>
         <img class="photo" :src="item.product.photoUrl" width="150" height="150">
         <span class="name">{{ item.product.name }}  </span>
+        <span class="name">{{item.product.price.amount / 100}} PLN </span>
         <span class="quantity rounded-pill p-2">{{ item.quantity }}</span>
         <button type='button' @click='deleteItem(item.product.id)'>Usuń z koszyka</button>
       </div>
@@ -85,8 +86,11 @@ button:hover {
 .quantity {
   margin-left: 20px;
   align-self: center;
-  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  width: 3rem;
+  background-color: rgba(75, 0, 130, 1) ;
   border: 2px solid rgba(75, 0, 130, 1);
+  box-shadow: 0 0 10px 5px rgba(75, 0, 130, 1);
   transition: 0.1s ease-out
 }
 .name {

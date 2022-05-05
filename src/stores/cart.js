@@ -12,6 +12,13 @@ export const useCartStore = defineStore({
       return total/100;
     },
      0),
+    getcount: (state) => state.items.reduce((count, item) => {
+      count += item.quantity ;
+      return count
+    }, 
+      0),
+    
+
   },
   actions: {
     addItem(product, quantity) {
